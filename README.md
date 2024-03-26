@@ -31,22 +31,54 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
+## *Program:*
+```Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+Developed by: K SANTHAN KUMAR
+RegisterNumber: 23004568
+```
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+```
+module experiment(
+    input a, b, c, d, w, x, y, z,
+    output f1, f2
+);
 
-Developed by: RegisterNumber:*/
+wire adash, bdash, cdash, ddash, ydash, zdash, wdash;
+not(adash, a);
+not(bdash, b);
+not(cdash, c);
+not(ddash, d);
+not(ydash, y);
+not(zdash, z);
+not(wdash, w);
 
+wire p, q, r, s, t, u, term1, term2, term3;
 
-**RTL realization**
+and(p, bdash, ddash);
+and(q, adash, b, d);
+and(r, a, b, cdash);
+and(term1, ydash, z);
+and(term2, x, y);
+and(term3, w, y);
 
-**Output:**
+or(f1, p, q, r);
+or(f2, term1, term2, term3);
 
-**RTL**
+endmodule
+```
 
-**Timing Diagram**
+<img width="960" alt="image" src="https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/ac5e312c-e7be-4f99-a24f-2e4d7d67977d">
 
-**Result:**
+## RTL Realization :
+![image](https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/974a7ddc-71c0-401b-829e-9e318ff0f71f)
+
+## *Output:*
+<img width="639" alt="image" src="https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/f19332b1-d26d-4375-9245-5c88df091248">
+
+## TRUTH TABLE :
+![image](https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/c84edbd0-feb7-4900-95f8-e1545ee77b8f)
+
+## *Result:*
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
